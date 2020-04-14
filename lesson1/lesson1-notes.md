@@ -73,7 +73,7 @@ for i in range(0, 5):
 ```
 Exercise: Try to change the range from (0, 5) to (0, 10), and run
 
-#Homework:
+# Homework:
 ## Printing with pattern
 
 Try this and run:
