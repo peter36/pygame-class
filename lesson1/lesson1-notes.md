@@ -73,10 +73,22 @@ for i in range(0, 5):
 ```
 Exercise: Try to change the range from (0, 5) to (0, 10), and run
 
+You can also nest loop.  Try this:
+```
+for i in range(0, 5):
+    stars = ''
+    for j in range(0, i):
+        stars = stars + '*'
+    print(stars)
+ ```
+Exercise:  Try to change the range of second for-loop to range(0, i + 1), and run.  What is the difference?
+
+
 # Homework:
 ## Printing with pattern
 
-Try this and run:
+We are given this program to print out a pattern:
+
 ```
 for i in range(0, 5):
     spaces = ''
@@ -87,7 +99,9 @@ for i in range(0, 5):
         stars = stars + '*'
     print(spaces + stars)
 ```
-You will see a pattern like this:
+Try and run.  You will see a pattern like this:
+
+
 ```
     *
    **
@@ -96,7 +110,7 @@ You will see a pattern like this:
 *****
 ```
 
-Now, how will you modify the program, so that it can print a pattern like this:
+Now, how will you modify the program, so that it can print a pattern like this?
 ```
          *
         ***
