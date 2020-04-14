@@ -1,2 +1,2 @@
-name = "Peter"
-print("hello " + name + "!!")
+name = 'Peter'
+print('Hello' + ' ' + name + '!!')
