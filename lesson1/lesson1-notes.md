@@ -111,3 +111,6 @@ Now, how will you modify the program, so that it can print a pattern like this:
 ```
 Hint: You just need to analyze the pattern, and change the range.  Think about using multiplication and relate
 variable i and j.  Be careful with indentation when you run the code.
+
+Instruction: To submit your homework, please commit your code to your own 'pygame-class' GitHub repository,
+under 'lesson1' directory by midnight 4/18 (Sunday).
