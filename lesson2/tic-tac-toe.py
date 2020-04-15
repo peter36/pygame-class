@@ -101,6 +101,9 @@ def main():
         print("It is a tie.")
 
 '''
+    print(board)
+    print(board[0][0])
+    print(board[0][1])
     print_board(board)
     print_line()
     player1_move(board, 1, 1)
