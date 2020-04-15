@@ -95,6 +95,8 @@ def main():
             turn = 2
         else:
             turn = 1
+    print_board(board)
+    print_line()
     if won > 0:
         print("Player {0} has won!!".format(won))
     else:
