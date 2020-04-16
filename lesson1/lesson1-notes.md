@@ -73,7 +73,23 @@ for i in range(0, 5):
 ```
 Exercise: Try to change the range from (0, 5) to (0, 10), and run
 
-You can also nest loop.  Try this:
+## Nested For-loop
+
+You can also have For-loop inside a For-loop.
+
+Try this:
+```
+for i in range(0, 3):
+    print('i = {0}'.format(i))
+    for j in range(0, 4):
+        print('j = {0}'.format(j))
+```
+
+Exercise:
+1. Try to change the range of i from range(0,3) to range(0, 5) or other value.
+2. Try to change the range of For-j to range(0, i)  (instead of 0, 10)
+
+Let's get back to our example of printing stars.  Try this:
 ```
 for i in range(0, 5):
     stars = ''
@@ -83,9 +99,44 @@ for i in range(0, 5):
  ```
 Exercise:  Try to change the range of second for-loop to range(0, i + 1), and run.  What is the difference?
 
+## If-statement
+
+If-statement is used to make decision.
+
+Try this:
+```
+score = 100
+if score < 50:
+    print("You failed!")
+else:
+    print("You passed!")
+```
+Exercise: Try to change score to 90, 40, and run.  What do you see at the output?
+
+More complex decision making.  'elif' is a short-hand for "else if".
+
+Try this:
+```
+score = 100
+if score < 50:
+    print("You failed!")
+else:
+    print("You passed!")
+    if score > 90:
+        print("You got an A")
+    elif score > 80:
+        print("You got a B")
+    elif score > 70:
+        print("You got a C")
+    else:
+        print("You got a D")
+``` 
+Exercise: Try to change score to 90, 85, 75, 60, 40, 30 and run.  What do you see at the output?
 
 # Homework:
 ## Printing with pattern
+
+### Problem 1.
 
 We are given this program to print out a pattern:
 
@@ -128,3 +179,52 @@ variable i and j.  Be careful with indentation when you run the code.
 
 Instruction: To submit your homework, please commit your code to your own 'pygame-class' GitHub repository,
 under 'lesson1' directory by midnight 4/18 (Sunday).
+
+### Problem 2.
+
+We are given a program to print square.
+
+```
+n = 5
+for i in range(0, n):
+    line = ''
+    if (i == 0) or (i == n - 1):
+        for j in range(0, n):
+          line = line + '*'
+    else:
+        line = '*'
+        for j in range(0, n - 2):
+            line = line + ' '
+        line = line + '*'
+    print(line)
+```
+
+Try the above program.  Also try to change the first line (n = 5) to different values, like 8, 10, etc.
+Can you try also n = 1, and n = 2, n = 3?
+
+Now, we would like to modify the above program and print out a rectangle, with given width and height.
+Can you modify the above program?
+
+You should start your program like this:
+```
+h = 4
+w = 8
+for i in range(0, n):
+    line = ''
+    if (i == 0) or (i == n - 1):
+        for j in range(0, n):
+          line = line + '*'
+    else:
+        line = '*'
+        for j in range(0, n - 2):
+            line = line + ' '
+        line = line + '*'
+    print(line)
+```
+
+Hint: You can reuse the code to print square, by modifying n => h or n => w.  The key is to find out
+where n should be changed to w, and where n should be change to h.
+
+
+
+
