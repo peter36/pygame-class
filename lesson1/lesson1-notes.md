@@ -136,6 +136,10 @@ Exercise: Try to change score to 90, 85, 75, 60, 40, 30 and run.  What do you se
 # Homework:
 ## Printing with pattern
 
+Instruction: To submit your homework, please commit your code to your own 'pygame-class' GitHub repository,
+under 'lesson1' directory by midnight 4/18 (Sunday).  Please save your solution as 'problem1.py' and 
+'problem2.py'
+
 ### Problem 1.
 
 We are given this program to print out a pattern:
@@ -177,12 +181,11 @@ Now, how will you modify the program, so that it can print a pattern like this?
 Hint: You just need to analyze the pattern, and change the range.  Think about using multiplication and relate
 variable i and j.  Be careful with indentation when you run the code.
 
-Instruction: To submit your homework, please commit your code to your own 'pygame-class' GitHub repository,
-under 'lesson1' directory by midnight 4/18 (Sunday).
+
 
 ### Problem 2.
 
-We are given a program to print square.
+We are given a program to print square.  We would like to modify this to print rectangle.
 
 ```
 n = 5
@@ -200,7 +203,7 @@ for i in range(0, n):
 ```
 
 Try the above program.  Also try to change the first line (n = 5) to different values, like 8, 10, etc.
-Can you try also n = 1, and n = 2, n = 3?
+Can you try also n = 1, and n = 2, n = 3?  Why does it still work when n = 1 or 2?
 
 Now, we would like to modify the above program and print out a rectangle, with given width and height.
 Can you modify the above program?
@@ -209,22 +212,16 @@ You should start your program like this:
 ```
 h = 4
 w = 8
-for i in range(0, n):
-    line = ''
-    if (i == 0) or (i == n - 1):
-        for j in range(0, n):
-          line = line + '*'
-    else:
-        line = '*'
-        for j in range(0, n - 2):
-            line = line + ' '
-        line = line + '*'
-    print(line)
+# copy and modify the for-loops in the square-printing program here
+```
+
+With h = 4 and w = 8, we would like to see a pattern like this:
+```
+********
+*      *
+*      *
+********
 ```
 
 Hint: You can reuse the code to print square, by modifying n => h or n => w.  The key is to find out
 where n should be changed to w, and where n should be change to h.
-
-
-
-
