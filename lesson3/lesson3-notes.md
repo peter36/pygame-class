@@ -1,7 +1,10 @@
 # Continue on the Tic-Tac-Toe Example
+
 ## Add some intelligence
 
 ## Rule-base algorithm
+
+## Top-down design approach (how to break down complex problem)
 
 ## Evaluate all possible moves
 
