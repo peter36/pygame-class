@@ -179,7 +179,7 @@ def get_board(board, x, y):
 def main():
     board = init_board()
     won = 0
-    turn = 2
+    turn = 1
     computer_player = True
     while (won == 0) and (is_full(board) is False):
         print_board(board)
