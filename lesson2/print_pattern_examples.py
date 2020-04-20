@@ -1,20 +1,5 @@
 import math
 
-
-def print_rectangle(w, h):
-    for i in range(0, h):
-        line = ''
-        if (i == 0) or (i == h - 1):
-            for j in range(0, w):
-                line = line + '*'
-        else:
-            line = '*'
-            for j in range(0, w - 2):
-                line = line + ' '
-            line = line + '*'
-        print(line)
-
-
 def print_circle(radius):
     size = radius * 2 + 1
     center = radius
@@ -32,5 +17,4 @@ def print_circle(radius):
 
 
 if __name__ == "__main__":
-    print_rectangle(20, 10)
     print_circle(8)
