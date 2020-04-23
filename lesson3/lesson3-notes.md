@@ -119,3 +119,25 @@ def main():
 ```
 
 
+# Homework
+Modify this to play Connect4
+
+Connect4 dimension is:
+w = 7
+h = 6
+
+## Issue 1
+Board size is different from Tic-Tac-Toe
+
+## Issue 2
+User will enter the column number (0 to 6)
+(that is the x coordinate only)
+
+player1_move(), player2_move() has to put to the right space because it will drop to the top of other pieces
+
+## Issue 3
+Bonus: Checking winning condition
+
+Due by Sunday midnight
+
+
