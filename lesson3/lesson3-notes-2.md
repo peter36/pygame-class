@@ -1,7 +1,5 @@
 # Lesson 3: Build a Tic-Tac-Toe Game
 
-## Analysis the flow of the game
-![Game Flowchart](images/tictactoe_flow_chart.png)
 
 ## Add some intelligence
 
