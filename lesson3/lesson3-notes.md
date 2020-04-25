@@ -5,12 +5,22 @@
 
 ## Create board
 ```
-def init_board(w, h):
+def init_board():
+    b = [[0,0,0], [0,0,0], [0,0,0]]
+    return b
+```
+
+or more general
+```
+WIDTH = 3
+HEIGHT = 3
+
+def init_board():
     b = []
-    for y in range(0, h):
+    for x in range(0, WIDTH):
         b.append([])
-        for x in range(0, w):
-            b[y].append(0)
+        for y in range(0, HEIGHT):
+            b[x].append(0)
     return b
 ```
 
@@ -123,8 +133,9 @@ def main():
 Modify this to play Connect4
 
 Connect4 dimension is:
-w = 7
-h = 6
+WIDTH = 7
+HEIGHT = 6
+
 
 ## Issue 1
 Board size is different from Tic-Tac-Toe
@@ -133,11 +144,96 @@ Board size is different from Tic-Tac-Toe
 User will enter the column number (0 to 6)
 (that is the x coordinate only)
 
-player1_move(), player2_move() has to put to the right space because it will drop to the top of other pieces
+input_player_move() has to put to the right space because it will drop to the top of other pieces
 
 ## Issue 3
+Modify is_full() function
+
+## Issue 4
 Bonus: Checking winning condition
 
-Due by Sunday midnight
+This is much harder.
 
+## Tips 1:
+Start the program with this:
+```
+WIDTH = 7
+HEIGHT = 6
+
+
+def init_board():
+    b = []
+    for x in range(0, WIDTH):
+        b.append([])
+        for y in range(0, HEIGHT):
+            b[x].append(0)
+    return b
+```
+
+The above define two constants WIDTH and HEIGHT, and you can use it throughout the program.  You do not need
+to put 7 and 6 all the time in your program.  It is more readable, and you can change the board size in the future.
+You should use "WIDTH" and "HEIGHT" in all your for-loops.
+
+## Tips 2:
+Modify input_player_move, to start like this:
+
+```
+def input_player_move(board, player_number):
+    # Python 2.7, You need to change input => raw_input
+    input_valid = False
+    while input_valid is False:
+        x = input("Player {0}, enter your move X:".format(player_number))
+        x = int(x)
+        ...
+        ...
+        if (input_valid):
+            y = find_top_of_column(board, x)
+            ...
+            ...
+    return x, y
+
+```
+
+And you should write a helper function that finds the top of the column
+```
+# given a x coordinate, return the first empty space (y-coordinate)
+# return -1 if that column is full
+def find_top_of_column(board, x):
+    result = -1
+    ...
+    # use for-loop to find out what is the y-coordinate and put it in result
+    ...
+    return result
+```
+
+## Tips 3:
+To check the winning condition.  It is harder.
+
+You can comment out the part that calls who_won() function in the main() function, so that you can test 
+if other part of your program works.
+
+```
+     # won = who_won(board)
+```
+
+Then you can modify is_full(), and test if you game works
+
+
+## Tips 4:
+To do who_won() function properly, you need to do:
+1. Modify check_winning() to take 4 instead of 3 parameter.
+2. In who_won(), you should not hard code the x,y coordinate,
+like the original tic-tac-toe, which has a much smaller board.
+You should make it work for all WIDTH and HEIGHT.
+3. It is useful if you draw the board on a paper, to try to figure our the rules.
+4. First, work on 4-in-a-row horizontally, vertically.
+5. Next, work on the two diagonals.  Be careful, it can be tricky.  You will find
+drawing out the board in white paper helps you.
+
+Finally, if it works for you, you can play around the game with your sibling!
+
+Please commit and push the code to github.  Please name your program `connect4.py`
+
+
+HOMEWORK:  Due by Monday midnight.  Try your best!!
 
