@@ -230,6 +230,15 @@ You should make it work for all WIDTH and HEIGHT.
 5. Next, work on the two diagonals.  Be careful, it can be tricky.  You will find
 drawing out the board in white paper helps you.
 
+## Tips 5:
+### How to debug (fix problem in your code)
+
+In Pycharm, you can set breakpoint to inspect the variable value, or you can use print,
+like this, which will print out the value of x and y.
+```
+print("{0} {1}".format(x, y))
+```
+
 Finally, if it works for you, you can play around the game with your sibling!
 
 Please commit and push the code to github.  Please name your program `connect4.py`
