@@ -122,9 +122,6 @@ else:
 
 ```
 
-A and B == not(not A or not B))
-
-
 # For-Loop
 
 To scan value in an array one by one, you can use for-loop.
