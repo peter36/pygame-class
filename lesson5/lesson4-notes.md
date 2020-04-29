@@ -1,4 +1,4 @@
-# Lesson 3: Build a Tic-Tac-Toe Game
+# Lesson 4: Add Some Intelligence to The Game
 
 
 ## Add some intelligence
