@@ -87,7 +87,7 @@ Exercise: Try to use different value for a and b, and see what is the result.
 > means greater than
 < means smaller than
 >= means greater than or equal to
-<= menas smaller than or equal to
+<= means smaller than or equal to
 == means equal
 ```
 
@@ -133,7 +133,7 @@ Example - Find the maximum value in an array:
 ```
 def find_max(arr):
     max = arr[0]
-    n = len(a)
+    n = len(arr)
     for i in range(0, n):
         if arr[i] > max:
             max = arr[i]

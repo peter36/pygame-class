@@ -1,6 +1,6 @@
 def find_max(arr):
     max = arr[0]
-    n = len(a)
+    n = len(arr)
     for i in range(0, n):
         if arr[i] > max:
             max = arr[i]
