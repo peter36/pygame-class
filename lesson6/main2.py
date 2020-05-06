@@ -14,4 +14,3 @@ while running:
             print("You released {0:c}".format(event.key))
 
 pygame.quit()
-
