@@ -56,6 +56,7 @@ pygame.quit()
 ```
 
 |Event Type   | Parameters  | 
+|-------------|-------------|
 |QUIT | None  | 
 |KEYDOWN| unicode, key, mod|
 |KEYUP| key, mod|
