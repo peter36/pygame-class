@@ -55,3 +55,6 @@ while running:
 
     player(playerX, playerY)
     pygame.display.update()
+# end of while
+
+pygame.quit()
