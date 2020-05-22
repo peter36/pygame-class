@@ -69,7 +69,7 @@ def show_gameover_text():
 
 
 def player(x, y):
-    screen.blit(playerImg, (x, y))
+    screen.blit(playerImg, (int(x), int(y)))
 
 
 def enemy(x, y, i):
@@ -79,7 +79,7 @@ def enemy(x, y, i):
 def fire_bullet(x, y):
     global bullet_state
     bullet_state = "fire"
-    screen.blit(bulletImg, (x + 16, y + 16))
+    screen.blit(bulletImg, (int(x + 16), int(y + 16)))
 
 
 def isCollision(enemyX, enemyY, bulletX, bulletY):
@@ -115,6 +115,7 @@ def recreate_enemies():
 
 # Game Loop
 running = True
+gameover = False
 while running:
 
     # RGB = Red, Green, Blue
@@ -151,30 +152,28 @@ while running:
 
     # handle enemy movement
     for i in range(0, num_of_enemies):
-        if enemyY[i] > 440:
-            show_gameover_text()
-            running = False
-
-        collision = isCollision(enemyX[i], enemyY[i], bulletX, bulletY)
-        if collision:
-            explosionSound = mixer.Sound("explosion.wav")
-            explosionSound.play()
-            bulletY = 480
-            bullet_state = "ready"
-            current_score += 1
-            enemyAlive[i] = False
-
         if enemyAlive[i]:
-            enemyX[i] = enemyX[i] + enemyX_change[i]
+            if enemyY[i] > 440:
+                show_gameover_text()
+                running = False
+                gameover = True
 
-            if enemyX[i] <= 0:
-                enemyX_change[i] = 0.3
-                enemyY[i] = enemyY[i] + enemyY_change[i]
-            if enemyX[i] >= 736:
-                enemyX_change[i] = -0.3
-                enemyY[i] = enemyY[i] + enemyY_change[i]
-
-
+            collision = isCollision(enemyX[i], enemyY[i], bulletX, bulletY)
+            if collision:
+                explosionSound = mixer.Sound("explosion.wav")
+                explosionSound.play()
+                bulletY = 480
+                bullet_state = "ready"
+                current_score += 1
+                enemyAlive[i] = False
+            else:
+                enemyX[i] = enemyX[i] + enemyX_change[i]
+                if enemyX[i] <= 0:
+                    enemyX_change[i] = 0.3
+                    enemyY[i] = enemyY[i] + enemyY_change[i]
+                if enemyX[i] >= 736:
+                    enemyX_change[i] = -0.3
+                    enemyY[i] = enemyY[i] + enemyY_change[i]
 
     if bulletY <= 0:
         bulletY = 480
@@ -198,7 +197,7 @@ while running:
     # redraw the screen
     pygame.display.update()
 
-    if running is False:
+    if gameover:
         time.sleep(5) # wait for 5 seconds
 
 # end of while
