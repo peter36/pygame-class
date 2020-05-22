@@ -28,7 +28,8 @@ enemyX = []
 enemyY = []
 enemyX_change = []
 enemyY_change = []
-num_of_enemies = 5
+enemyAlive = []
+num_of_enemies = 1
 
 for i in range(0, num_of_enemies):
     enemyImg.append(pygame.image.load('enemy.png'))
@@ -36,6 +37,7 @@ for i in range(0, num_of_enemies):
     enemyY.append(random.randint(50, 150))
     enemyX_change.append(0.3)
     enemyY_change.append(40)
+    enemyAlive.append(True)
 
 # Bullet
 bulletImg = pygame.image.load('bullet.png')
@@ -88,6 +90,29 @@ def isCollision(enemyX, enemyY, bulletX, bulletY):
         return False
 
 
+def num_enemies_alive():
+    num_alive = 0
+    for i in range(0, num_of_enemies):
+        if enemyAlive[i]:
+            num_alive += 1
+    return num_alive
+
+
+def recreate_enemies():
+    global num_of_enemies
+    for i in range(0, num_of_enemies):
+        enemyX[i] = random.randint(0, 736)
+        enemyY[i] = random.randint(50, 150)
+        enemyAlive[i] = True
+    num_of_enemies += 1
+    enemyImg.append(pygame.image.load('enemy.png'))
+    enemyX.append(random.randint(0, 736))
+    enemyY.append(random.randint(50, 150))
+    enemyX_change.append(0.3)
+    enemyY_change.append(40)
+    enemyAlive.append(True)
+
+
 # Game Loop
 running = True
 while running:
@@ -137,17 +162,17 @@ while running:
             bulletY = 480
             bullet_state = "ready"
             current_score += 1
-            enemyX[i] = random.randint(0, 736)
-            enemyY[i] = random.randint(50, 150)
+            enemyAlive[i] = False
 
-        enemyX[i] = enemyX[i] + enemyX_change[i]
+        if enemyAlive[i]:
+            enemyX[i] = enemyX[i] + enemyX_change[i]
 
-        if enemyX[i] <= 0:
-            enemyX_change[i] = 0.3
-            enemyY[i] = enemyY[i] + enemyY_change[i]
-        if enemyX[i] >= 736:
-            enemyX_change[i] = -0.3
-            enemyY[i] = enemyY[i] + enemyY_change[i]
+            if enemyX[i] <= 0:
+                enemyX_change[i] = 0.3
+                enemyY[i] = enemyY[i] + enemyY_change[i]
+            if enemyX[i] >= 736:
+                enemyX_change[i] = -0.3
+                enemyY[i] = enemyY[i] + enemyY_change[i]
 
 
 
@@ -160,8 +185,13 @@ while running:
         fire_bullet(bulletX, bulletY)
 
     player(playerX, playerY)
+
+    if num_enemies_alive() == 0:
+        recreate_enemies()
+
     for i in range(0, num_of_enemies):
-        enemy(enemyX[i], enemyY[i], i)
+        if enemyAlive[i]:
+            enemy(enemyX[i], enemyY[i], i)
 
     show_score(textX, textY)
 
