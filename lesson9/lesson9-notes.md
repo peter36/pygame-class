@@ -165,8 +165,10 @@ The simplest logic will be the enemy cars just move down the screen.
 Optional: A slightly more advance ones will be cars moving slowly towards the player
 
 ## Step 5: detect collision
-Need to test collision
+You need to test collision.  If player collide with enemy, it will die and game over. 
 
-## Step 6: add score
+## Step 6: add and display score
+You need to add score.  It is up to you. Maybe when enemy move to bottom.  You also need to display the score
 
-## Step 7 
+## Step 7: Commit and then Push your code to GitHub.
+Complete the game, and push your code to GitHub

@@ -30,16 +30,15 @@ def init_player_car():
     player_x = 400 - 72
     player_y = 520
 
-
-# Draw player car
-def draw_player_car():
-    screen.blit(player_image, (int(player_x), int(player_y)))
-
-
 def update_player_car_position():
     global player_x, player_y
     player_x = player_x + player_speed_x
     player_y = player_y - player_speed_y
+
+
+# Draw player car
+def draw_player_car():
+    screen.blit(player_image, (int(player_x), int(player_y)))
 
 
 # Define enemy cars
@@ -71,18 +70,12 @@ for i in range(0, MAX_ENEMY_CARS):
 # Draw enemy car with index i
 def draw_enemy_car(i):
     screen.blit(enemy_image[i], (int(enemy_x[i]), int(enemy_y[i])))
-    #print('draw enemy car here')
+
 
 # Update enemy car location here
 def update_enemy_car(i):
     pass
-    #print('update enemy car location')
 
-
-# Detect collision (True means collide, False means okay)
-def detect_crashing():
-    #print('check each enemy position and player position and detect crash')
-    return False
 
 # Game Loop
 clock = pygame.time.Clock()
@@ -114,10 +107,6 @@ while running:
                 player_speed_x = 0
             if event.key == pygame.K_UP or event.key == pygame.K_DOWN:
                 player_speed_y = 0
-        # if event.type == pygame.KEYDOWN:
-        # ...
-        # if event.type == pygame.KEYUP:
-        # ...
 
     # handle player movement
     update_player_car_position()
@@ -128,18 +117,12 @@ while running:
         if enemy_alive[i]:
             update_enemy_car(i)
 
-    for i in range (0, num_enemy_cars):
+    for i in range(0, num_enemy_cars):
         if enemy_alive[i]:
             draw_enemy_car(i)
 
-    # detect collision
-
-    # update score or how much time elapsed
-
-    # level up and show more enemy cars base on the level
-
     # redraw the screen
     pygame.display.update()
-
 # end of while
+
 pygame.quit()
