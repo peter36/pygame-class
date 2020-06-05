@@ -91,3 +91,10 @@ Redirection and Pipe
 >> - Send command output to the end of an existing file
 | - Send output of one command to the another command
 ```
+
+git commands
+
+git clone <repository address>
+git pull <get update>
+git push <push update>
+
